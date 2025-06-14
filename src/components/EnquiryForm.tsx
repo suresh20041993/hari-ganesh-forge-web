@@ -59,7 +59,12 @@ const EnquiryForm = () => {
       🏢 Company    : ${formData.company}
       🛠️ Service    : ${formData.serviceType}
       📝 Message    : ${formData.message}
-    `
+    `,
+    name: formData.name,
+    email: formData.email,
+    phone: formData.phone,
+    company: formData.company,
+    serviceType: formData.serviceType
   })
 }).catch((err) => {
   toast({
