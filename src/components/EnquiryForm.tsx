@@ -104,39 +104,64 @@ const EnquiryForm = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Information */}
-          <div className="space-y-8">
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-2xl text-blue-600">Contact Information</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">Address</h3>
-                  <p className="text-gray-600">
-                    No 2/84 VM Building,Nethaji Nagar,<br />
-                    1st cross Mookandapalli, Hosur(TK) <br />
-                    635126-Krishnagiri<br />
-                  </p>
-                </div>
+         <div className="w-full px-0">
+  <Card className="w-full">
+    <CardHeader>
+      <CardTitle className="text-2xl text-blue-600">Contact Information</CardTitle>
+    </CardHeader>
+    <CardContent className="space-y-6">
 
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">Phone</h3>
-                  <p className="text-gray-600">+91 9043414421</p>
-                </div>
+      {/* Address + Map Section */}
+      <div className="flex flex-col md:flex-row md:gap-8 gap-4 w-full">
+        {/* Address */}
+        <div className="w-full md:w-1/2">
+          <h3 className="font-semibold text-lg mb-2">Address</h3>
+          <p className="text-gray-600">
+            No 2/84 VM Building, Nethaji Nagar,<br />
+            1st cross Mookandapalli, Hosur(TK) <br />
+            635126 - Krishnagiri<br />
+          </p>
+        </div>
 
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">Email</h3>
-                  <p className="text-gray-600">hariganeshengg2012@gmail.com</p>
-                </div>
+        {/* Google Map */}
+        <div className="w-full md:w-1/2 rounded-lg overflow-hidden border border-gray-300 shadow-sm">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4332.362171742479!2d77.80063937198129!3d12.750773295548361!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae70e2a3c22b27%3A0x20e6182a083fdc71!2sHARI%20GANESH%20ENGINEERING!5e1!3m2!1sen!2sin!4v1749918034787!5m2!1sen!2sin"
+            width="100%"
+            height="300"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
 
-                <div>
-                  <h3 className="font-semibold text-lg mb-2">Business Hours</h3>
-                  <p className="text-gray-600">Monday - Saturday: 9:00 AM - 7:00 PM</p>
-                  <p className="text-gray-600">Sunday: Closed</p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+      {/* Phone */}
+      <div>
+        <h3 className="font-semibold text-lg mb-2">Phone</h3>
+        <p className="text-gray-600">+91 9043414421</p>
+      </div>
+
+      {/* Email */}
+      <div>
+        <h3 className="font-semibold text-lg mb-2">Email</h3>
+        <p className="text-gray-600">hariganeshengg2012@gmail.com</p>
+      </div>
+
+      {/* Business Hours */}
+      <div>
+        <h3 className="font-semibold text-lg mb-2">Business Hours</h3>
+        <p className="text-gray-600">Monday - Saturday: 9:00 AM - 7:00 PM</p>
+        <p className="text-gray-600">Sunday: Closed</p>
+      </div>
+
+    </CardContent>
+  </Card>
+</div>
+
+
+
 
           {/* Enquiry Form */}
           <Card>
