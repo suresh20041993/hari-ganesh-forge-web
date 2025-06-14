@@ -5,9 +5,11 @@ import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
   server: {
-    host: "0.0.0.0", // ✅ Accept connections from all IPs
+    host: "0.0.0.0", // Accept connections from any IP
     port: 8080,
-    allowedHosts: ['all'], // ✅ Allow all domains (Render-specific fix)
+    allowedHosts: [
+      "hari-ganesh-forge-web.onrender.com" // ✅ Add your Render domain here
+    ],
   },
   plugins: [
     react(),
