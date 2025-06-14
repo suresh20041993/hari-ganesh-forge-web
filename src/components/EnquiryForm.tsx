@@ -42,40 +42,33 @@ const EnquiryForm = () => {
 
     // Here you would typically send the data to your backend
     // Send enquiry data to backend API
-    const URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000/send-mail"; // Replace with your actual backend URL
-    fetch(URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        to: "hariganeshengg2012@gmail.com",
-        subject: formData.subject || "New Enquiry from Website",
-        message: `
-          📩 New Enquiry Received!
+  fetch("https://mail-service-wtzm.onrender.com/send-mail", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    to: "hariganeshengg2012@gmail.com",
+    subject:"New Enquiry from Website",
+    message: `
+      📩 New Enquiry Received!
 
-          👤 Name       : ${formData.name}
-          📧 Email      : ${formData.email}
-          📱 Phone      : ${formData.phone}
-          🏢 Company    : ${formData.company}
-          🛠️ Service    : ${formData.serviceType}
+      👤 Name       : ${formData.name}
+      📧 Email      : ${formData.email}
+      📱 Phone      : ${formData.phone}
+      🏢 Company    : ${formData.company}
+      🛠️ Service    : ${formData.serviceType}
+      📝 Message    : ${formData.message}
+    `
+  })
+}).catch((err) => {
+  toast({
+    title: "Error",
+    description: "Failed to send enquiry. Please try again later.",
+    variant: "destructive"
+  });
+});
 
-          📝 Message:
-          ${formData.message}
-        `,
-        from: formData.email,
-        name: formData.name,
-        phone: formData.phone,
-        company: formData.company,
-        serviceType: formData.serviceType
-      })
-    }).catch((err) => {
-      toast({
-        title: "Error",
-        description: "Failed to send enquiry. Please try again later.",
-        variant: "destructive"
-      });
-    });
 
     toast({
       title: "Enquiry Submitted",
@@ -210,8 +203,8 @@ const EnquiryForm = () => {
                       className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                     >
                       <option value="">Select Service</option>
-                      <option value="both">Turning</option>
-                      <option value="both">Milling</option>
+                      <option value="Turning">Turning</option>
+                      <option value="Milling">Milling</option>
                       <option value="other">Other Services</option>
                     </select>
                   </div>
