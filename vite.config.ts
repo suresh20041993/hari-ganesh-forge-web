@@ -4,13 +4,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  server: {
-    host: true, // Accept connections from any IP
-    port: 8080,
-    allowedHosts: [
-      "hari-ganesh-forge-web.onrender.com" // ✅ Add your Render domain here
-    ],
-  },
+  base: "/", // ✅ Ensure correct asset paths on Render
   plugins: [
     react(),
     mode === "development" && componentTagger(),
