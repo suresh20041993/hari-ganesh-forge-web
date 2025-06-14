@@ -7,12 +7,12 @@ const Gallery = () => {
   
   const images = [
     {
-      url: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+      url: "/assets/IMG_20250601_151321.jpg",
       title: "CNC Turning Machine",
       description: "High-precision turning operations"
     },
     {
-      url: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+      url: "/assets/IMG_20250601_151451.jpg",
       title: "Milling Operations", 
       description: "Advanced multi-axis milling"
     },

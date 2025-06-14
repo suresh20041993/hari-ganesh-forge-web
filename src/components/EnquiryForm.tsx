@@ -29,7 +29,7 @@ const EnquiryForm = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Basic validation
     if (!formData.name || !formData.email || !formData.message) {
       toast({
@@ -41,8 +41,42 @@ const EnquiryForm = () => {
     }
 
     // Here you would typically send the data to your backend
-    console.log("Form submitted:", formData);
-    
+    // Send enquiry data to backend API
+    const URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000/send-mail"; // Replace with your actual backend URL
+    fetch(URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        to: "hariganeshengg2012@gmail.com",
+        subject: formData.subject || "New Enquiry from Website",
+        message: `
+          📩 New Enquiry Received!
+
+          👤 Name       : ${formData.name}
+          📧 Email      : ${formData.email}
+          📱 Phone      : ${formData.phone}
+          🏢 Company    : ${formData.company}
+          🛠️ Service    : ${formData.serviceType}
+
+          📝 Message:
+          ${formData.message}
+        `,
+        from: formData.email,
+        name: formData.name,
+        phone: formData.phone,
+        company: formData.company,
+        serviceType: formData.serviceType
+      })
+    }).catch((err) => {
+      toast({
+        title: "Error",
+        description: "Failed to send enquiry. Please try again later.",
+        variant: "destructive"
+      });
+    });
+
     toast({
       title: "Enquiry Submitted",
       description: "Thank you for your enquiry. We'll get back to you within 24 hours.",
@@ -81,29 +115,25 @@ const EnquiryForm = () => {
                 <div>
                   <h3 className="font-semibold text-lg mb-2">Address</h3>
                   <p className="text-gray-600">
-                    Hari Ganesh Engineering<br />
-                    Industrial Estate, Sector 15<br />
-                    Mumbai, Maharashtra 400015<br />
-                    India
+                    No 2/84 VM Building,Nethaji Nagar,<br />
+                    1st cross Mookandapalli, Hosur(TK) <br />
+                    635126-Krishnagiri<br />
                   </p>
                 </div>
-                
+
                 <div>
                   <h3 className="font-semibold text-lg mb-2">Phone</h3>
-                  <p className="text-gray-600">+91 98765 43210</p>
-                  <p className="text-gray-600">+91 99887 76543</p>
+                  <p className="text-gray-600">+91 9043414421</p>
                 </div>
-                
+
                 <div>
                   <h3 className="font-semibold text-lg mb-2">Email</h3>
-                  <p className="text-gray-600">info@hariganesheng.com</p>
-                  <p className="text-gray-600">sales@hariganesheng.com</p>
+                  <p className="text-gray-600">hariganeshengg2012@gmail.com</p>
                 </div>
-                
+
                 <div>
                   <h3 className="font-semibold text-lg mb-2">Business Hours</h3>
-                  <p className="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM</p>
-                  <p className="text-gray-600">Saturday: 9:00 AM - 2:00 PM</p>
+                  <p className="text-gray-600">Monday - Saturday: 9:00 AM - 7:00 PM</p>
                   <p className="text-gray-600">Sunday: Closed</p>
                 </div>
               </CardContent>
@@ -180,9 +210,8 @@ const EnquiryForm = () => {
                       className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                     >
                       <option value="">Select Service</option>
-                      <option value="turning">CNC Turning</option>
-                      <option value="milling">CNC Milling</option>
-                      <option value="both">Turning & Milling</option>
+                      <option value="both">Turning</option>
+                      <option value="both">Milling</option>
                       <option value="other">Other Services</option>
                     </select>
                   </div>

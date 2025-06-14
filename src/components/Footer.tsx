@@ -22,7 +22,6 @@ const Footer = () => {
               We deliver quality engineering solutions with state-of-the-art CNC machinery and experienced craftsmanship.
             </p>
             <div className="text-sm text-gray-400">
-              <p>ISO 9001:2015 Certified</p>
               <p>Quality • Precision • Excellence</p>
             </div>
           </div>
@@ -45,15 +44,16 @@ const Footer = () => {
             <div className="space-y-3 text-gray-300">
               <div>
                 <p className="font-medium">Address:</p>
-                <p className="text-sm">Industrial Estate, Sector 15<br />Mumbai, Maharashtra 400015</p>
+                <p className="text-sm">No 2/84 VM Building,Nethaji Nagar,1st cross<br />Mookandapalli, Hosur(TK) -635126-Krishnagiri</p>
+
               </div>
               <div>
                 <p className="font-medium">Phone:</p>
-                <p className="text-sm">+91 98765 43210</p>
+                <p className="text-sm">+91 9043414421</p>
               </div>
               <div>
                 <p className="font-medium">Email:</p>
-                <p className="text-sm">info@hariganesheng.com</p>
+                <p className="text-sm">hariganeshengg2012@gmail.com</p>
               </div>
             </div>
           </div>
