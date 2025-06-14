@@ -72,7 +72,7 @@ const EnquiryForm = () => {
 
     toast({
       title: "Enquiry Submitted",
-      description: "Thank you for your enquiry. We'll get back to you within 24 hours.",
+      description: "Thank you for your enquiry. We'll get back to you within 24 hours !.",
     });
 
     // Reset form
