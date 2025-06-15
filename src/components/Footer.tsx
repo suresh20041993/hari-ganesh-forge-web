@@ -104,7 +104,7 @@ const Footer = () => {
             <p>&copy; {currentYear} Hari Ganesh Engineering. All rights reserved.</p>
           </div>
           <div className="text-gray-400 text-sm mt-4 md:mt-0">
-            <p>Designed & Developed with precision engineering excellence</p>
+            <p>Designed & Developed with ❤️ by Hari Ganesh Engineering</p>
           </div>
         </div>
       </div>
